@@ -6,6 +6,18 @@
     <title>Andi Software Solutions - Software Development Company</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Initialize animations immediately on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add visible class to elements in viewport
+            setTimeout(function() {
+                const elements = document.querySelectorAll('.fade-in, .slide-in');
+                elements.forEach(element => {
+                    element.classList.add('visible');
+                });
+            }, 100);
+        });
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -70,7 +82,7 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="https://via.placeholder.com/600x600/e9f1fc/007bff?text=Our+Team" alt="Our Team">
+                <img src="../Aman/image/team.jpg" alt="Our Team">
             </div>
         </div>
     </section>

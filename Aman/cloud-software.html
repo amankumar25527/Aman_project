@@ -6,6 +6,79 @@
     <title>Cloud Software - Andi Software Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Override to make sure all content is visible */
+        .fade-in, .slide-in {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+        
+        /* Fix any positioning issues */
+        .services-section {
+            opacity: 1;
+            visibility: visible;
+            margin-top: 2rem;
+        }
+        
+        .service-item {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .benefits-section {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .case-studies-section {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .partners-section {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Additional fixes */
+        body {
+            overflow-x: hidden;
+        }
+        
+        .service-item {
+            margin-bottom: 30px;
+        }
+        
+        .service-content {
+            padding: 15px;
+        }
+        
+        .service-image {
+            min-height: 200px;
+        }
+        
+        .benefit-card {
+            margin-bottom: 20px;
+        }
+        
+        .case-study-card {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        // Immediately show all elements when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force add visible class to all elements
+            const elements = document.querySelectorAll('.fade-in, .slide-in');
+            elements.forEach(element => {
+                element.classList.add('visible');
+            });
+            
+            // Add class to body to ensure all content is visible
+            document.body.classList.add('content-visible');
+        });
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -147,27 +220,33 @@
         <h2>Cloud Success Stories</h2>
         <div class="case-studies-container">
             <div class="case-study-card slide-in">
+                <div class="case-study-image">
+                    <img src="../Aman/image/eccomerce.png" alt="E-commerce Cloud Case Study">
+                </div>
                 <div class="case-study-content">
                     <h3>E-commerce Migration</h3>
                     <p class="case-category">Retail Industry</p>
                     <p>Helped a leading retailer migrate their platform to AWS, resulting in 40% faster page load times and 60% reduction in infrastructure costs.</p>
-                    <!-- Image space as requested -->
                 </div>
             </div>
             <div class="case-study-card slide-in">
+                <div class="case-study-image">
+                    <img src="../Aman/image/healthcare.jpg" alt="Healthcare Cloud Case Study">
+                </div>
                 <div class="case-study-content">
                     <h3>Healthcare Data Platform</h3>
                     <p class="case-category">Healthcare Industry</p>
                     <p>Built a secure cloud-based data platform for a healthcare provider, ensuring HIPAA compliance while improving data accessibility.</p>
-                    <!-- Image space as requested -->
                 </div>
             </div>
             <div class="case-study-card slide-in">
+                <div class="case-study-image">
+                    <img src="../Aman/image/fintech.jpg" alt="FinTech Cloud Case Study">
+                </div>
                 <div class="case-study-content">
                     <h3>FinTech Cloud Solution</h3>
                     <p class="case-category">Financial Services</p>
                     <p>Developed a scalable cloud infrastructure for a financial services company, supporting 10x growth in transactions.</p>
-                    <!-- Image space as requested -->
                 </div>
             </div>
         </div>
@@ -178,19 +257,19 @@
         <h2>Our Cloud Partners</h2>
         <div class="partners-container">
             <div class="partner-logo slide-in">
-                <!-- AWS Logo Space -->
+                <img src="../Aman/image/aws.png" alt="Amazon Web Services">
                 <h3>Amazon Web Services</h3>
             </div>
             <div class="partner-logo slide-in">
-                <!-- Microsoft Azure Logo Space -->
+                <img src="../Aman/image/microsoft.png" alt="Microsoft Azure">
                 <h3>Microsoft Azure</h3>
             </div>
             <div class="partner-logo slide-in">
-                <!-- Google Cloud Logo Space -->
+                <img src="../Aman/image/google cloud.png" alt="Google Cloud Platform">
                 <h3>Google Cloud Platform</h3>
             </div>
             <div class="partner-logo slide-in">
-                <!-- IBM Cloud Logo Space -->
+                <img src="../Aman/image/ibm.jpg" alt="IBM Cloud">
                 <h3>IBM Cloud</h3>
             </div>
         </div>
