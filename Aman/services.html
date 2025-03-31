@@ -224,12 +224,63 @@
         .page-header {
             margin-top: 80px;
         }
+        
+        /* Image optimization for faster loading */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Add specific size limits to service images */
+        .service-image img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        /* Client logo optimization */
+        .client-logo img {
+            max-width: 120px;
+            max-height: 80px;
+            object-fit: contain;
+        }
+        
+        /* Banner image optimization */
+        .banner-image img {
+            max-height: 400px;
+            object-fit: cover;
+        }
+        
+        /* Lazy loading fade-in effect */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        img.loaded {
+            opacity: 1;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Only add visible class to animations
             document.querySelectorAll('.fade-in, .slide-in').forEach(function(el) {
                 el.classList.add('visible');
+            });
+            
+            // Handle lazy loading images with fade-in effect
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            lazyImages.forEach(img => {
+                img.onload = function() {
+                    this.classList.add('loaded');
+                };
+                
+                // For images that are already loaded from cache
+                if (img.complete) {
+                    img.classList.add('loaded');
+                }
             });
         });
         
@@ -312,7 +363,7 @@
                     <p>We combine technical expertise with industry knowledge to create customized solutions that address your specific challenges and help you achieve your business goals.</p>
                 </div>
                 <div class="banner-image">
-                    <img src="../Aman/image/services_banner.jpg" alt="Software Solutions">
+                    <img src="image/services_banner.jpg" alt="Software Solutions" loading="lazy">
                 </div>
             </section>
         </div>
@@ -348,7 +399,7 @@
                         </div>
                     </div>
                     <div class="service-image">
-                        <img src="../Aman/image/web dev.jpg" alt="Web Development">
+                        <img src="image/web dev.jpg" alt="Web Development" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -384,7 +435,7 @@
                         </div>
                     </div>
                     <div class="service-image">
-                        <img src="../Aman/image/mobile dev.jpg" alt="Mobile App Development">
+                        <img src="image/mobile dev.jpg" alt="Mobile App Development" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -419,7 +470,7 @@
                         </div>
                     </div>
                     <div class="service-image">
-                        <img src="../Aman/image/cloud dev.jpg" alt="Cloud Computing">
+                        <img src="image/cloud dev.jpg" alt="Cloud Computing" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -455,7 +506,7 @@
                         </div>
                     </div>
                     <div class="service-image">
-                        <img src="../Aman/image/ai ml.jpg" alt="AI and Machine Learning">
+                        <img src="image/ai ml.jpg" alt="AI and Machine Learning" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -491,7 +542,7 @@
                         </div>
                     </div>
                     <div class="service-image">
-                        <img src="../Aman/image/blockchain.jpg" alt="Blockchain Development">
+                        <img src="image/blockchain.jpg" alt="Blockchain Development" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -527,7 +578,7 @@
                         </div>
                     </div>
                     <div class="service-image">
-                        <img src="../Aman/image/deveops.jpg" alt="DevOps and IT Operations">
+                        <img src="image/deveops.jpg" alt="DevOps and IT Operations" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -562,7 +613,7 @@
                         </div>
                     </div>
                     <div class="service-image">
-                        <img src="../Aman/image/it consulting.jpg" alt="IT Consulting">
+                        <img src="image/it consulting.jpg" alt="IT Consulting" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -615,22 +666,22 @@
             <h2>Trusted by Leading Companies</h2>
             <div class="clients-container">
                 <div class="client-logo">
-                    <img src="../Aman/image/fedx.png" alt="Client 1">
+                    <img src="image/fedx.png" alt="Client 1" loading="lazy">
                 </div>
                 <div class="client-logo">
-                    <img src="../Aman/image/hp.png" alt="Client 2">
+                    <img src="image/hp.png" alt="Client 2" loading="lazy">
                 </div>
                 <div class="client-logo">
-                    <img src="../Aman/image/haxgon.jpg" alt="Client 3">
+                    <img src="image/haxgon.jpg" alt="Client 3" loading="lazy">
                 </div>
                 <div class="client-logo">
-                    <img src="../Aman/image/aws.png" alt="Client 4">
+                    <img src="image/aws.png" alt="Client 4" loading="lazy">
                 </div>
                 <div class="client-logo">
-                    <img src="../Aman/image/microsoft.png" alt="Client 5">
+                    <img src="image/microsoft.png" alt="Client 5" loading="lazy">
                 </div>
                 <div class="client-logo">
-                    <img src="../Aman/image/google cloud.png" alt="Client 6">
+                    <img src="image/google cloud.png" alt="Client 6" loading="lazy">
                 </div>
             </div>
             <div class="testimonials">

@@ -18,6 +18,52 @@
             }, 100);
         });
     </script>
+    <style>
+        /* Image optimization for faster loading */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Add specific size limits to service images */
+        .service-image img, .service-card img {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        /* Hero image optimization */
+        .hero img {
+            max-height: 600px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        /* About image optimization */
+        .about-image img {
+            max-height: 400px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        /* Client logo optimization */
+        .client-logo img, .partner-logo img {
+            max-width: 120px;
+            max-height: 80px;
+            object-fit: contain;
+        }
+        
+        /* Lazy loading fade-in effect */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        img.loaded {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -82,7 +128,7 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="../Aman/image/team.jpg" alt="Our Team">
+                <img src="image/team.jpg" alt="Our Team" loading="lazy">
             </div>
         </div>
     </section>
@@ -241,5 +287,22 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Handle lazy loading images with fade-in effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            lazyImages.forEach(img => {
+                img.onload = function() {
+                    this.classList.add('loaded');
+                };
+                
+                // For images that are already loaded from cache
+                if (img.complete) {
+                    img.classList.add('loaded');
+                }
+            });
+        });
+    </script>
 </body>
 </html> 

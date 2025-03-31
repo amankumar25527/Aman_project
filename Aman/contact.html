@@ -6,6 +6,39 @@
     <title>Contact Us - Andi Software Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Image optimization for faster loading */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Map image optimization */
+        .map-container img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        /* Contact image optimization */
+        .contact-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        
+        /* Lazy loading fade-in effect */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        img.loaded {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -218,5 +251,22 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Handle lazy loading images with fade-in effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            lazyImages.forEach(img => {
+                img.onload = function() {
+                    this.classList.add('loaded');
+                };
+                
+                // For images that are already loaded from cache
+                if (img.complete) {
+                    img.classList.add('loaded');
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
